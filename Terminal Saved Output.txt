@@ -1,0 +1,381 @@
+Last login: Wed Feb  5 13:47:56 on ttys000
+bradfordkeatts@Bradfords-iMac ~ % cd /Users/bradfordkeatts/GovConProject
+
+bradfordkeatts@Bradfords-iMac GovConProject % python gov_concierge.py
+
+Hi, are you ready to start searching for government contracts?
+Enter Y to proceed: cd /Users/bradfordkeatts/GovConProject
+git init
+git add gov_concierge.py
+git commit -m "Initial commit of GovConSearch interactive script"
+Exiting search. Come back when you're ready!
+bradfordkeatts@Bradfords-iMac GovConProject % git init
+Initialized empty Git repository in /Users/bradfordkeatts/GovConProject/.git/
+bradfordkeatts@Bradfords-iMac GovConProject % git add gov_concierge.py
+bradfordkeatts@Bradfords-iMac GovConProject % git commit -m "Initial commit of GovConSearch interactive script"
+[main (root-commit) 9dbc1e3] Initial commit of GovConSearch interactive script
+ Committer: Bradford Keatts <bradfordkeatts@Bradfords-iMac.attlocal.net>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 93 insertions(+)
+ create mode 100755 gov_concierge.py
+bradfordkeatts@Bradfords-iMac GovConProject % 
+bradfordkeatts@Bradfords-iMac GovConProject % cd /Users/bradfordkeatts/GovConProject
+git init
+git add gov_concierge.py
+git commit -m "Initial commit of GovConSearch interactive script"
+
+Reinitialized existing Git repository in /Users/bradfordkeatts/GovConProject/.git/
+On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	gov_con_master.json
+
+nothing added to commit but untracked files present (use "git add" to track)
+bradfordkeatts@Bradfords-iMac GovConProject % git add gov_con_master.json
+git commit -m "Add gov_con_master.json"
+
+[main 6b98ed5] Add gov_con_master.json
+ Committer: Bradford Keatts <bradfordkeatts@Bradfords-iMac.attlocal.net>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 93 insertions(+)
+ create mode 100755 gov_con_master.json
+bradfordkeatts@Bradfords-iMac GovConProject % cd /Users/bradfordkeatts/GovConProject
+
+bradfordkeatts@Bradfords-iMac GovConProject % python gov_concierge.py
+
+Hi, are you ready to start searching for government contracts?
+Enter Y to proceed: python gov_concierge.py
+Exiting search. Come back when you're ready!
+bradfordkeatts@Bradfords-iMac GovConProject % 
+bradfordkeatts@Bradfords-iMac GovConProject % cd /Users/bradfordkeatts/GovConProject
+
+bradfordkeatts@Bradfords-iMac GovConProject % python gov_concierge.py
+
+Hi, are you ready to start searching for government contracts?
+Enter Y to proceed: Find bids for porta potties in Michigan, that are acive?
+Exiting search. Come back when you're ready!
+bradfordkeatts@Bradfords-iMac GovConProject % cd /Users/bradfordkeatts/GovConProject
+
+bradfordkeatts@Bradfords-iMac GovConProject % python gov_concierge.py
+
+Hi, are you ready to start searching for government contracts?
+Enter Y to proceed: cd /Users/bradfordkeatts/GovConProject
+Exiting search. Come back when you're ready!
+bradfordkeatts@Bradfords-iMac GovConProject % 
+bradfordkeatts@Bradfords-iMac GovConProject % python gov_concierge.py
+
+Hi, are you ready to start searching for government contracts?
+Enter Y to proceed: python -m json.tool gov_con_master.json
+Exiting search. Come back when you're ready!
+bradfordkeatts@Bradfords-iMac GovConProject % 
+bradfordkeatts@Bradfords-iMac GovConProject % Hi, are you ready to start searching for government contracts?
+Enter Y to proceed:
+
+zsh: no matches found: contracts?
+zsh: command not found: Enter
+bradfordkeatts@Bradfords-iMac GovConProject % python gov_concierge.py
+
+Hi, are you ready to start searching for government contracts?
+Enter Y to proceed: Y
+Enter the start date (MM/dd/yyyy): 3.01.25
+Enter the end date (MM/dd/yyyy): 03/01/2025
+Enter search keywords (use OR to separate multiple, e.g., construction OR electrical): porta potty
+Enter set-aside type (or leave blank if not applicable): Y
+Enter the number of records to return (default 5): 5
+Error retrieving bid data: 400 Client Error:  for url: https://api.sam.gov/opportunities/v2/search?postedFrom=3.01.25&postedTo=03%2F01%2F2025&q=porta+potty&limit=5&setAsideType=Y
+bradfordkeatts@Bradfords-iMac GovConProject % Y
+zsh: command not found: Y
+bradfordkeatts@Bradfords-iMac GovConProject % python gov_concierge.py
+
+Hi, are you ready to start searching for government contracts?
+Enter Y to proceed: Y
+Enter the start date (MM/dd/yyyy): python gov_concierge.py
+Enter the end date (MM/dd/yyyy): 03/01/2025
+Enter search keywords (use OR to separate multiple, e.g., construction OR electrical): Enter the start date (MM/dd/yyyy): python gov_concierge.py
+Enter the end date (MM/dd/yyyy): 03/01/2025
+Enter set-aside type (or leave blank if not applicable): Enter the number of records to return (default 5): python gov_concierge.py
+Invalid input for limit. Using default value of 5.
+
+Error retrieving bid data: 400 Client Error:  for url: https://api.sam.gov/opportunities/v2/search?postedFrom=python+gov_concierge.py&postedTo=03%2F01%2F2025&q=Enter+the+start+date+%28MM%2Fdd%2Fyyyy%29%3A+python+gov_concierge.py&limit=5&setAsideType=Enter+the+end+date+%28MM%2Fdd%2Fyyyy%29%3A+03%2F01%2F2025
+bradfordkeatts@Bradfords-iMac GovConProject % 
+bradfordkeatts@Bradfords-iMac GovConProject % python gov_concierge.py
+
+Hi, are you ready to start searching for government contracts?
+Enter Y to proceed: Y
+Enter the start date (MM/dd/yyyy): 03/01/2025
+Enter the end date (MM/dd/yyyy): 03/01/2026
+Enter search keywords (use OR to separate multiple, e.g., construction OR electrical): construction, porta potty
+Enter set-aside type (or leave blank if not applicable): Y
+Enter the number of records to return (default 5): 5
+Error retrieving bid data: 400 Client Error:  for url: https://api.sam.gov/opportunities/v2/search?postedFrom=03%2F01%2F2025&postedTo=03%2F01%2F2026&q=construction%2C+porta+potty&limit=5&setAsideType=Y
+bradfordkeatts@Bradfords-iMac GovConProject % python gov_concierge.py
+
+Hi, are you ready to start searching for government contracts?
+Enter Y to proceed: Y
+Enter the start date (MM/dd/yyyy): 03/01.25
+Enter the end date (MM/dd/yyyy): 03/01.26python gov_concierge.py
+Enter search keywords (use OR to separate multiple, e.g., construction OR electrical): python gov_concierge.py
+Enter set-aside type (or leave blank if not applicable): cd /Users/bradfordkeatts/GovConProject
+Enter the number of records to return (default 5): 
+Error retrieving bid data: 400 Client Error:  for url: https://api.sam.gov/opportunities/v2/search?postedFrom=03%2F01.25&postedTo=03%2F01.26python+gov_concierge.py&q=python+gov_concierge.py&limit=5&setAsideType=cd+%2FUsers%2Fbradfordkeatts%2FGovConProject
+bradfordkeatts@Bradfords-iMac GovConProject % python gov_concierge.py
+
+Hi, are you ready to start searching for government contracts?
+Enter Y to proceed: Y
+Enter the start date (MM/dd/yyyy): 03/01/25
+Enter the end date (MM/dd/yyyy): 03/01/26
+Enter search keywords (use OR to separate multiple, e.g., construction OR electrical): construction OR porta potty
+Enter set-aside type (or leave blank if not applicable): 
+Enter the number of records to return (default 5): 5
+Error retrieving bid data: 400 Client Error:  for url: https://api.sam.gov/opportunities/v2/search?postedFrom=03%2F01%2F25&postedTo=03%2F01%2F26&q=construction+OR+porta+potty&limit=5
+bradfordkeatts@Bradfords-iMac GovConProject % SDVOSB
+zsh: command not found: SDVOSB
+bradfordkeatts@Bradfords-iMac GovConProject % cd /Users/bradfordkeatts/GovConProject
+
+bradfordkeatts@Bradfords-iMac GovConProject % python gov_concierge.py
+
+Hi, are you ready to start searching for government contracts?
+Enter Y to proceed: Y
+Enter the start date (MM/dd/yyyy): 03/01/25
+Enter the end date (MM/dd/yyyy): 03/01/27
+Enter search keywords (use OR to separate multiple, e.g., construction OR electrical): construction OR porta potty
+Enter set-aside type (or leave blank if not applicable): SDVOSB
+Enter the number of records to return (default 5): 5
+Error retrieving bid data: 400 Client Error:  for url: https://api.sam.gov/opportunities/v2/search?postedFrom=03%2F01%2F25&postedTo=03%2F01%2F27&q=construction+OR+porta+potty&limit=5&setAsideType=SDVOSB
+bradfordkeatts@Bradfords-iMac GovConProject % cd /Users/bradfordkeatts/GovConProject
+
+bradfordkeatts@Bradfords-iMac GovConProject % python gov_concierge.py
+
+Hi, are you ready to start searching for government contracts?
+Enter Y to proceed: Y
+Enter the start date (MM/dd/yyyy): 03/01/2025            
+Enter the end date (MM/dd/yyyy): 03/01/2027
+Enter search keywords (use OR to separate multiple, e.g., construction OR electrical): construction OR porta potty
+Enter set-aside type (or leave blank if not applicable): 
+Enter the number of records to return (default 5): 5
+Error retrieving bid data: 400 Client Error:  for url: https://api.sam.gov/opportunities/v2/search?postedFrom=03%2F01%2F2025&postedTo=03%2F01%2F2027&q=construction+OR+porta+potty&limit=5
+bradfordkeatts@Bradfords-iMac GovConProject % def fetch_opportunities(posted_from, posted_to, keywords, setaside, limit=5):
+    params = {
+        "postedFrom": posted_from,
+        "postedTo": posted_to,
+        "q": keywords,
+        "limit": limit
+    }
+    if setaside.strip():
+        params["setAsideType"] = setaside.strip()
+
+    response = requests.get(SAM_API_URL, headers=headers, params=params)
+    if not response.ok:
+        print("Response status:", response.status_code)
+        print("Response text:", response.text)
+        response.raise_for_status()  # This will then raise the error
+    return response.json()
+
+zsh: parse error near `}'
+bradfordkeatts@Bradfords-iMac GovConProject % pip install flask
+
+Collecting flask
+  Downloading flask-3.1.0-py3-none-any.whl.metadata (2.7 kB)
+Collecting Werkzeug>=3.1 (from flask)
+  Downloading werkzeug-3.1.3-py3-none-any.whl.metadata (3.7 kB)
+Collecting Jinja2>=3.1.2 (from flask)
+  Downloading jinja2-3.1.5-py3-none-any.whl.metadata (2.6 kB)
+Collecting itsdangerous>=2.2 (from flask)
+  Downloading itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+Collecting click>=8.1.3 (from flask)
+  Downloading click-8.1.8-py3-none-any.whl.metadata (2.3 kB)
+Collecting blinker>=1.9 (from flask)
+  Downloading blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+Collecting MarkupSafe>=2.0 (from Jinja2>=3.1.2->flask)
+  Downloading MarkupSafe-3.0.2-cp313-cp313-macosx_10_13_universal2.whl.metadata (4.0 kB)
+Downloading flask-3.1.0-py3-none-any.whl (102 kB)
+Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+Downloading click-8.1.8-py3-none-any.whl (98 kB)
+Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+Downloading jinja2-3.1.5-py3-none-any.whl (134 kB)
+Downloading werkzeug-3.1.3-py3-none-any.whl (224 kB)
+Downloading MarkupSafe-3.0.2-cp313-cp313-macosx_10_13_universal2.whl (14 kB)
+Installing collected packages: MarkupSafe, itsdangerous, click, blinker, Werkzeug, Jinja2, flask
+Successfully installed Jinja2-3.1.5 MarkupSafe-3.0.2 Werkzeug-3.1.3 blinker-1.9.0 click-8.1.8 flask-3.1.0 itsdangerous-2.2.0
+bradfordkeatts@Bradfords-iMac GovConProject % cd /Users/bradfordkeatts/GovConProject
+
+bradfordkeatts@Bradfords-iMac GovConProject % python app.py
+
+/Library/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/bradfordkeatts/GovConProject/app.py': [Errno 2] No such file or directory
+bradfordkeatts@Bradfords-iMac GovConProject % python app.py
+
+/Library/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/bradfordkeatts/GovConProject/app.py': [Errno 2] No such file or directory
+bradfordkeatts@Bradfords-iMac GovConProject % cd /Users/bradfordkeatts/GovConProject
+
+bradfordkeatts@Bradfords-iMac GovConProject % python app.py
+
+/Library/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/bradfordkeatts/GovConProject/app.py': [Errno 2] No such file or directory
+bradfordkeatts@Bradfords-iMac GovConProject % cd /Users/bradfordkeatts/GovConProject
+
+bradfordkeatts@Bradfords-iMac GovConProject % python gov_concierge.py
+
+Hi, are you ready to start searching for government contracts?
+Enter Y to proceed: Y
+Enter the start date (MM/dd/yyyy): 03/01/2025
+Enter the end date (MM/dd/yyyy): 03/01/2027
+Enter search keywords (use OR to separate multiple, e.g., construction OR electrical): construction
+Enter set-aside type (or leave blank if not applicable): SDVOSB
+Enter the number of records to return (default 5): 5
+Error retrieving bid data: 400 Client Error:  for url: https://api.sam.gov/opportunities/v2/search?postedFrom=03%2F01%2F2025&postedTo=03%2F01%2F2027&q=construction&limit=5&setAsideType=SDVOSB
+bradfordkeatts@Bradfords-iMac GovConProject % def fetch_opportunities(posted_from, posted_to, keywords, setaside, limit=5):
+    params = {
+        "postedFrom": posted_from,
+        "postedTo": posted_to,
+        "q": keywords,
+        "limit": limit
+    }
+    if setaside.strip():
+        params["setAsideType"] = setaside.strip()
+
+    response = requests.get(SAM_API_URL, headers=headers, params=params)
+    if not response.ok:
+        print("Response status:", response.status_code)
+        print("Response text:", response.text)
+        response.raise_for_status()
+    return response.json()
+
+zsh: parse error near `}'
+bradfordkeatts@Bradfords-iMac GovConProject % cd /Users/bradfordkeatts/GovConProject
+
+bradfordkeatts@Bradfords-iMac GovConProject % python gov_concierge.py
+
+Hi, are you ready to start searching for government contracts?
+Enter Y to proceed: Y
+Enter the start date (MM/dd/yyyy): cd /Users/bradfordkeatts/GovConProject
+Enter the end date (MM/dd/yyyy): 
+Enter search keywords (use OR to separate multiple, e.g., construction OR electrical): cd /Users/bradfordkeatts/GovConProject
+Enter set-aside type (or leave blank if not applicable): 
+Enter the number of records to return (default 5): python gov_concierge.py
+Invalid input for limit. Using default value of 5.
+Error retrieving bid data: 400 Client Error:  for url: https://api.sam.gov/opportunities/v2/search?postedFrom=cd+%2FUsers%2Fbradfordkeatts%2FGovConProject&postedTo=&q=cd+%2FUsers%2Fbradfordkeatts%2FGovConProject&limit=5
+
+bradfordkeatts@Bradfords-iMac GovConProject % 
+bradfordkeatts@Bradfords-iMac GovConProject % cd /Users/bradfordkeatts/GovConProject
+
+bradfordkeatts@Bradfords-iMac GovConProject % python gov_concierge.py
+
+Hi, are you ready to start searching for government contracts?
+Enter Y to proceed: Y
+Enter the start date (MM/dd/yyyy): 03/01/2025
+Enter the end date (MM/dd/yyyy): 03/01/2025
+Enter search keywords (use OR to separate multiple, e.g., construction OR electrical): python gov_concierge.py
+Enter set-aside type (or leave blank if not applicable): cd /Users/bradfordkeatts/GovConProject
+Enter the number of records to return (default 5): 
+
+Data saved to gov_con_master.json
+No active bids found. Try modifying the search parameters.
+
+Now moving into bid strategy and proposal creation/planning...
+bradfordkeatts@Bradfords-iMac GovConProject % cd /Users/bradfordkeatts/GovConProject
+
+bradfordkeatts@Bradfords-iMac GovConProject % python gov_concierge.py
+
+Hi, are you ready to start searching for government contracts?
+Enter Y to proceed: Y
+Enter the start date (MM/dd/yyyy): 03/01/2025
+Enter the end date (MM/dd/yyyy): 03/01/2027
+Enter search keywords (use OR to separate multiple, e.g., construction OR electrical): construction
+Enter set-aside type (or leave blank if not applicable):   
+Enter the number of records to return (default 5): 5
+Response status: 400
+Response text: {"errorCode":"400","errorMessage":"Date range must be null year(s) apart"}
+Error retrieving bid data: 400 Client Error:  for url: https://api.sam.gov/opportunities/v2/search?postedFrom=03%2F01%2F2025&postedTo=03%2F01%2F2027&q=construction&limit=5
+bradfordkeatts@Bradfords-iMac GovConProject % python app.py
+
+ * Serving Flask app 'app'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 291-036-716
+127.0.0.1 - - [05/Feb/2025 17:07:15] "GET /search?posted_from=03/01/2025&posted_to=12/31/2025&keywords=construction%20OR%20porta%20potty&limit=5 HTTP/1.1" 200 -
+127.0.0.1 - - [05/Feb/2025 17:07:18] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [05/Feb/2025 17:07:18] "GET /search?posted_from=03/01/2025&posted_to=12/31/2025&keywords=construction%20OR%20porta%20potty&limit=5 HTTP/1.1" 200 -
+ * Detected change in '/Users/bradfordkeatts/GovConProject/app.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 291-036-716
+cd /Users/bradfordkeatts/GovConProject
+
+python app.py
+
+cd /Users/bradfordkeatts/GovConProject
+
+python app.py
+
+* Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+
+127.0.0.1 - - [05/Feb/2025 17:11:37] "GET /search?posted_from=03/01/2025&posted_to=12/31/2025&keywords=construction%20OR%20porta%20potty&limit=5 HTTP/1.1" 200 -
+127.0.0.1 - - [05/Feb/2025 17:11:39] "GET /search?posted_from=03/01/2025&posted_to=12/31/2025&keywords=construction%20OR%20porta%20potty&limit=5 HTTP/1.1" 200 -
+cd /Users/bradfordkeatts/GovConProject
+
+git init
+
+git remote add origin https://github.com/Keatter/GovConSearch.git
+
+git add .
+git commit -m "Initial commit of GovConSearch script"
+git push -u origin main
+
+git add .
+git commit -m "Initial commit of GovConSearch script"
+git push -u origin main
+
+git status
+
+git add .
+git commit -m "Updated GovConSearch script"
+git push -u origin main
+
+http://127.0.0.1:5000/search?posted_from=03/01/2025&posted_to=12/31/2025&keywords=construction%20OR%20porta%20potty&limit=5
+
+127.0.0.1 - - [05/Feb/2025 19:14:50] "GET /search?posted_from=03/01/2025&posted_to=12/31/2025&keywords=construction%20OR%20porta%20potty&limit=5 HTTP/1.1" 200 -
+127.0.0.1 - - [05/Feb/2025 19:14:52] "GET /search?posted_from=03/01/2025&posted_to=12/31/2025&keywords=construction%20OR%20porta%20potty&limit=5 HTTP/1.1" 200 -
+ * Detected change in '/Users/bradfordkeatts/GovConProject/gov_concierge.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 291-036-716
+cd /Users/bradfordkeatts/GovConProject
+git add app.py
+git commit -m "Added Flask API for GovConSearch"
+git push origin main
+
+cd /Users/bradfordkeatts/GovConProject
+git add app.py
+git commit -m "Added Flask API for GovConSearch"
+git push origin main
+
+cd /Users/bradfordkeatts/GovConProject
+
+pip freeze > requirements.txt
+
+git add requirements
