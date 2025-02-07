@@ -48,7 +48,8 @@ def fetch_opportunities(posted_from, posted_to, keywords, setaside, limit=5):
 def search():
     # Get parameters from the URL query string.
     posted_from = request.args.get('posted_from', '2024-01-01')
-    posted_to = request.args.get('posted_to', '2025-12-31')
+    # FIX: Ensure posted_to is in YYYY-MM-DD format - default to today + 1 year for example
+    posted_to = request.args.get('posted_to', '2025-02-08') # Changed default to YYYY-MM-DD format
     keywords = request.args.get('keywords', 'construction OR porta potty')
     setaside = request.args.get('setaside', '')
 
@@ -56,6 +57,16 @@ def search():
         limit = int(request.args.get('limit', 5))
     except ValueError:
         limit = 5
+
+    # Debugging: Print the exact request before sending it
+    print(f"DEBUG: Sending request to SAM.gov -> {SAM_API_URL}")
+    print(f"Params: {json.dumps({'postedFrom': posted_from, 'postedTo': posted_to, 'q': keywords, 'limit': limit}, indent=2)}")
+
+    try:
+        data = fetch_opportunities(posted_from, posted_to, keywords, setaside, limit)
+        return jsonify(data)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
     # Debugging: Print the exact request before sending it
     print(f"DEBUG: Sending request to SAM.gov -> {SAM_API_URL}")
