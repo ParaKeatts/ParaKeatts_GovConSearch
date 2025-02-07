@@ -15,42 +15,41 @@ headers = {
 
 def fetch_opportunities(posted_from, posted_to, keywords, setaside, limit=5):
     params = {
-        "postedFrom": posted_from,    # e.g., "2024-01-01"
-        "postedTo": posted_to,      # e.g., "2025-12-31"
-        "q": urllib.parse.quote(keywords),  # FIX: Properly encode keywords
+        "postedFrom": posted_from,
+        "postedTo": posted_to,
+        "q": urllib.parse.quote(keywords),
         "limit": limit
     }
     if setaside.strip():
         params["setAsideType"] = setaside.strip()
 
-    print(f"DEBUG: Sending request to SAM.gov API with params: {params}") # DEBUGGING: Log parameters
+    print(f"DEBUG: Sending request to SAM.gov API with params: {params}")
 
     try:
         response = requests.get(SAM_API_URL, headers=headers, params=params)
-        response.raise_for_status()    # Raise HTTPError for bad responses (4xx or 5xx)
+        response.raise_for_status()
 
-        try: # TRY TO PARSE JSON, CATCH JSONDecodeError SPECIFICALLY
+        try:
             data = response.json()
-            print("DEBUG: SAM.gov API response (JSON):") # DEBUGGING: Indicate JSON response
-            # We will NOT print the entire JSON here to keep the output clean, but we know it's JSON now
+            print("DEBUG: SAM.gov API response (JSON):")
             return data
-        except json.JSONDecodeError as json_err: # Catch JSON parsing errors
-            print("DEBUG: JSONDecodeError from SAM.gov API response!") # DEBUGGING: Indicate JSON decode error
-            print("DEBUG: Raw Response Text from SAM.gov API:") # DEBUGGING: Print raw response text
-            print(response.text) # DEBUGGING: Print raw response text
-            return {"error": f"Error decoding JSON response from SAM.gov API: {str(json_err)}", "raw_response_text": response.text}, 500 # Return 500 and raw text
+        except json.JSONDecodeError as json_err:
+            print("DEBUG: JSONDecodeError from SAM.gov API response!")
+            print("DEBUG: Raw Response Text from SAM.gov API:")
+            print(response.text)
+            return {"error": f"Error decoding JSON: {str(json_err)}", "raw_response": response.text}, 500
 
-    except requests.exceptions.RequestException as req_err: # Catch request exceptions (network issues, timeouts, etc.)
-        print(f"DEBUG: RequestException to SAM.gov API: {str(req_err)}") # DEBUGGING: Log request exception
-        return {"error": f"API request failed: {str(req_err)}"}, 500 # Return 500 for request errors
+    except requests.exceptions.RequestException as req_err:
+        print(f"DEBUG: RequestException to SAM.gov API: {str(req_err)}")
+        return {"error": f"API Request Failed: {str(req_err)}"}, 500
 
 @app.route('/search', methods=['GET'])
 def search():
-    # Get parameters from the URL query string.
-    posted_from = request.args.get('posted_from', '2024-01-01')
-    # FIX: Ensure posted_to is in YYYY-MM-DD format - default to today + 1 year for example
-    posted_to = request.args.get('posted_to', '2025-02-08') # Changed default to YYYY-MM-DD format
-    keywords = request.args.get('keywords', 'construction OR porta potty')
+    # Get parameters from the URL query string, ensuring correct date format (YYYY-MM-DD).
+    posted_from = request.args.get('posted_from', '2024-01-01') # Default is already YYYY-MM-DD
+    posted_to = request.args.get('posted_to', '2025-02-08')   # Default is now YYYY-MM-DD
+
+    keywords = request.args.get('query', 'construction OR porta potty') # Corrected parameter name to 'query' to match OpenAPI spec
     setaside = request.args.get('setaside', '')
 
     try:
@@ -58,19 +57,8 @@ def search():
     except ValueError:
         limit = 5
 
-    # Debugging: Print the exact request before sending it
-    print(f"DEBUG: Sending request to SAM.gov -> {SAM_API_URL}")
-    print(f"Params: {json.dumps({'postedFrom': posted_from, 'postedTo': posted_to, 'q': keywords, 'limit': limit}, indent=2)}")
-
-    try:
-        data = fetch_opportunities(posted_from, posted_to, keywords, setaside, limit)
-        return jsonify(data)
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
-
-    # Debugging: Print the exact request before sending it
-    print(f"DEBUG: Sending request to SAM.gov -> {SAM_API_URL}")
-    print(f"Params: {json.dumps({'postedFrom': posted_from, 'postedTo': posted_to, 'q': keywords, 'limit': limit}, indent=2)}")
+    print(f"DEBUG: Request to /search endpoint received.") # Debugging log
+    print(f"DEBUG: Parameters received: query='{keywords}', posted_from='{posted_from}', posted_to='{posted_to}', limit={limit}, setaside='{setaside}'") # Debugging log
 
     try:
         data = fetch_opportunities(posted_from, posted_to, keywords, setaside, limit)
