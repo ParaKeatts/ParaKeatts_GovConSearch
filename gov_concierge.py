@@ -5,7 +5,9 @@ import os
 app = Flask(__name__)
 
 SAM_API_URL = "https://api.sam.gov/prod/opportunities/v2/search"
-SAM_API_KEY = "YOUR_SAM_API_KEY"  # Replace with your actual API Key
+import os
+SAM_API_KEY = os.getenv("SAM_API_KEY")
+
 
 @app.route("/search", methods=["GET"])
 def search_contracts():
