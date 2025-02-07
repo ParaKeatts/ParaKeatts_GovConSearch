@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 import json
 import requests
+import urllib.parse
 
 app = Flask(__name__)
 
@@ -14,29 +15,37 @@ headers = {
 
 def fetch_opportunities(posted_from, posted_to, keywords, setaside, limit=5):
     params = {
-        "postedFrom": posted_from,   # e.g., "03/01/2025"
-        "postedTo": posted_to,       # e.g., "12/31/2025" (must be in the same year)
-        "q": keywords,
+        "postedFrom": posted_from,   # e.g., "2024-01-01"
+        "postedTo": posted_to,       # e.g., "2025-12-31"
+        "q": urllib.parse.quote(keywords),  # FIX: Properly encode keywords
         "limit": limit
     }
     if setaside.strip():
         params["setAsideType"] = setaside.strip()
-    
-    response = requests.get(SAM_API_URL, headers=headers, params=params)
-    response.raise_for_status()  # Raise error if something is wrong
-    return response.json()
+
+    try:
+        response = requests.get(SAM_API_URL, headers=headers, params=params)
+        response.raise_for_status()  # Raise error if something is wrong
+        return response.json()
+    except requests.exceptions.RequestException as e:
+        return {"error": f"API request failed: {str(e)}"}
 
 @app.route('/search', methods=['GET'])
 def search():
     # Get parameters from the URL query string.
-    posted_from = request.args.get('posted_from', '03/01/2025')
-    posted_to = request.args.get('posted_to', '12/31/2025')
+    posted_from = request.args.get('posted_from', '2024-01-01')
+    posted_to = request.args.get('posted_to', '2025-12-31')
     keywords = request.args.get('keywords', 'construction OR porta potty')
     setaside = request.args.get('setaside', '')
+
     try:
         limit = int(request.args.get('limit', 5))
     except ValueError:
         limit = 5
+
+    # Debugging: Print the exact request before sending it
+    print(f"DEBUG: Sending request to SAM.gov -> {SAM_API_URL}")
+    print(f"Params: {json.dumps({'postedFrom': posted_from, 'postedTo': posted_to, 'q': keywords, 'limit': limit}, indent=2)}")
 
     try:
         data = fetch_opportunities(posted_from, posted_to, keywords, setaside, limit)
@@ -45,4 +54,4 @@ def search():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
