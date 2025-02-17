@@ -1,0 +1,22 @@
+params = {
+    "api_key": "YOUR_API_KEY",
+    "q": "small business",
+    "postedFrom": "02/16/2024",
+    "postedTo": "02/15/2025"
+}
+
+python3 sam_api_test.py
+
+nano sam_api_test.py
+
+import requests
+
+def main():
+    url = "https://api.samdesk.io/1/account"
+    params = {"api_key": "YOUR_API_KEY"}
+    response = requests.get(url, params=params)
+    print(response.status_code)
+    print(response.json())
+
+if __name__ == "__main__":
+    main()
